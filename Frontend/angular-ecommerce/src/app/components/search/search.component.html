@@ -1,0 +1,12 @@
+<form class="form-header">
+  <input #myInput type="text" name="search"
+         class="au-input au-input-xl"
+         placeholder="Search..."
+         (keydown.enter)="doSearch(myInput.value, $event)"
+         />
+  <button class="au-btn-submit"
+          (click)="doSearch(myInput.value, $event)"
+  >
+    Search
+  </button>
+</form>

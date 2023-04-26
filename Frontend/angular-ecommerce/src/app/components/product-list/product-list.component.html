@@ -1,0 +1,47 @@
+<div class="main-content" >
+  <div class="section-content section-content-p30" style="display: flex; flex-direction: column; justify-content: space-between; min-height: calc(100vh - 166px)">
+    <div class="container-fluid" >
+      <div class="row">
+        <div *ngFor="let temProduct of products" class="col-md-3">
+          <div class="product-box">
+            <a routerLink='/products/{{temProduct.id}}' routerLinkActive="active-link">
+              <img src="{{temProduct.image_url}}" class="img-responsive" alt="Product Picture">
+            </a>
+
+            <a routerLink='/products/{{temProduct.id}}' routerLinkActive="active-link">
+              <h1>{{temProduct.name}}</h1>
+            </a>
+
+            <div class="price">{{ temProduct.unit_price | currency }}</div>
+
+            <a class="primary-btn" href="#">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-pagination" style="padding-bottom: 1.5%">
+      <div class="row">
+
+        <div class="col"></div>
+        <div class="co">
+
+          <ngb-pagination [(page)]="thePageNumber"
+                          [pageSize]="thePageSize"
+                          [collectionSize]="theTotalElements"
+                          [rotate] = "true"
+                          [boundaryLinks] = "true"
+                          [maxSize]="5"
+                          (pageChange)="listProducts()">
+
+          </ngb-pagination>
+        </div>
+        <div class="col"></div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
