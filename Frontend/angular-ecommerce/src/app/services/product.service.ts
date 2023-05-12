@@ -46,7 +46,7 @@ export class ProductService {
   }
 
   searchProducts(thePage: number,thePageSize: number ,keyword: string): Observable<GetResponseProducts>{
-    let searchUrl = 'http://localhost:8080/api/products/search/findByNameContaining?name=' + keyword;
+    let searchUrl = 'http://localhost:8080/api/products/search/findByNameContaining?name=' + keyword + '&page=' + thePage.toString() + '&size=' + thePageSize.toString();
     return this.httpClient.get<GetResponseProducts>(searchUrl);
   }
 

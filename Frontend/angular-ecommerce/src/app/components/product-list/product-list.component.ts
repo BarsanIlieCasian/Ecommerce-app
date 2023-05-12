@@ -64,7 +64,7 @@ export class ProductListComponent implements OnInit{
   }
 
   listProductsBySearch(keyword: string){
-    this.productService.searchProducts(this.thePageNumber, this.thePageSize, keyword).subscribe(data => {this.products = data._embedded.products;
+    this.productService.searchProducts(this.thePageNumber-1, this.thePageSize, keyword).subscribe(data => {this.products = data._embedded.products;
                                                                                                                       this.thePageSize = data.page.size;
                                                                                                                       this.thePageNumber = data.page.number+1
                                                                                                                       this.theTotalElements = data.page.totalElements});
