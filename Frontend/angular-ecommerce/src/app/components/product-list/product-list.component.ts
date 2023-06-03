@@ -69,4 +69,10 @@ export class ProductListComponent implements OnInit{
                                                                                                                       this.thePageNumber = data.page.number+1
                                                                                                                       this.theTotalElements = data.page.totalElements});
   }
+
+  addToCart(product: Product){
+    //Todo
+    console.log(product.name)
+  }
 }
+

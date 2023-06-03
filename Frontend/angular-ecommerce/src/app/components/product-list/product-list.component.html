@@ -1,7 +1,9 @@
 <div class="main-content" >
   <div class="section-content section-content-p30" style="display: flex; flex-direction: column; justify-content: space-between; min-height: calc(100vh - 166px)">
-    <div class="container-fluid" >
+
+    <div class="container-fluid">
       <div class="row">
+
         <div *ngFor="let temProduct of products" class="col-md-3">
           <div class="product-box">
             <a routerLink='/products/{{temProduct.id}}' routerLinkActive="active-link">
@@ -14,9 +16,10 @@
 
             <div class="price">{{ temProduct.unit_price | currency }}</div>
 
-            <a class="primary-btn" href="#">Add to cart</a>
+            <button class="btn-primary btn btn-sm" (click)="addToCart(temProduct)">Add to cart</button>
           </div>
         </div>
+
       </div>
     </div>
 
