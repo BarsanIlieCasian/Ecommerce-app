@@ -3,6 +3,7 @@ import {Product} from "../../common/product";
 import {ProductService} from "../../services/product.service";
 import {ActivatedRoute} from "@angular/router";
 import {pipe} from "rxjs";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-product-list',
@@ -19,7 +20,8 @@ export class ProductListComponent implements OnInit{
   theTotalElements: number = 0;
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private cartService: CartService) {
   }
 
   ngOnInit() {
@@ -71,8 +73,8 @@ export class ProductListComponent implements OnInit{
   }
 
   addToCart(product: Product){
-    //Todo
-    console.log(product.name)
+    this.cartService.addToCart(product);
+    console.log( product instanceof Product)
   }
 }
 
