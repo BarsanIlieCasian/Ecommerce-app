@@ -33,4 +33,8 @@ export class CartDetailsComponent implements OnInit{
   subtractFromCart(cartItem: CartItem){
     this.cartService.subtractFromCart(cartItem);
   }
+
+  deleteFromCart(cartItem: CartItem){
+    this.cartService.deleteFromCart(cartItem);
+  }
 }

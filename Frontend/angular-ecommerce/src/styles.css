@@ -578,6 +578,9 @@ input.au-input.au-input-xl{
   color:#585858
 }
 
+.pagination .page-item.active .page-link::after {
+  content: none;
+}
 /*
  * ----------------------------
  * Shopping Cart Checkout
@@ -585,17 +588,16 @@ input.au-input.au-input-xl{
  */
 
 .form-area{
-  background:#e5e5e5;
+  background-color: white;
   position:relative;
   margin-bottom:45px;
   padding:50px 20px;
-  border:3px solid #ccc
 }
 .form-area h3{
   position:absolute;
-  top:-26px;
+  top:-46px;
   left:13px;
-  background:#e5e5e5;
+  background:transparent;
   padding:10px 20px;
   font-weight:500;
   z-index:23;

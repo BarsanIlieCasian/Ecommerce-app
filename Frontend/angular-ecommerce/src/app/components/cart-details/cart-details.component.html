@@ -22,14 +22,16 @@
               <p>{{tempCartItem.unit_price | currency: 'USD'}}</p>
             </td>
             <td>
-              <div style="display: flex; justify-content: space-between">
-                <p>Quantity: {{tempCartItem.quantity}}</p>
-                <div>
-                <button class="btn-primary btn btn-sm" style="width: 30px; padding: 1px" (click)="addToCart(tempCartItem)">+</button>
-                <button class="btn-primary btn btn-sm" style="margin-left: 15px; width: 30px; padding: 1px" (click)="subtractFromCart(tempCartItem)">-</button>
+              <p>Quantity:</p>
+              <div style="display: flex; justify-content: start">
+                <div style="display: flex; justify-content: space-between; width: 100px;">
+                  <button class="btn-primary btn btn-sm" style="width: 30px; height: 25px; padding: 1px; margin: auto" (click)="addToCart(tempCartItem)"><i class="fas fa-plus"></i> </button>
+                  <p style="font-size: 25px">{{tempCartItem.quantity}}</p>
+                  <button class="btn-primary btn btn-sm" style="width: 30px; height: 25px; padding: 1px; margin: auto;" (click)="subtractFromCart(tempCartItem)"><i class="fas fa-minus" style="margin: auto"></i> </button>
                 </div>
               </div>
               <p>Subtotal: {{tempCartItem.quantity*tempCartItem.unit_price | currency: 'USD'}}</p>
+              <button class="btn-primary btn btn-sm" style="align-self: end" (click)="deleteFromCart(tempCartItem)">Remove</button>
             </td>
           </tr>
           <tr>
@@ -38,6 +40,7 @@
               <p>Total quantity: {{totalQuantity}}</p>
               <p>Shipping: Free</p>
               <p>Total price: {{totalPrice}}</p>
+              <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
             </td>
           </tr>
         </tbody>
